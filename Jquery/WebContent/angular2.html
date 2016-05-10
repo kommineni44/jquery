@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html ng-app="app2" ng-cloak> 
+  <head>
+  <style >
+  .ng-cloak,[ng-cloak],[ng\:cloak]{
+  display:none;
+  }
+  
+  </style>
+  
+  
+  </head>
+   <body>
+   
+   <h4 ng-controller="badmood"> i am feeling {{bad}}</h4>
+ 
+    <h4 ng-controller="goodmood"> i am feeling {{bad}}</h4>
+    
+    <div ng-controller="gList">
+        <h3> Total items :{{groceries.length}} </h3>
+        
+        
+        <ol>
+         <li ng-repeat="grocery in groceries"  ng-if="$index > 1">
+             {{grocery.item}} + " : " + {{grocery.purchased}} {{$index}}
+        
+        
+          </li>
+    
+        </ol>
+    </div>
+    
+    
+   
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+    <script src="js/app2.js"></script>
+   </body>
+
+
+
+</html>

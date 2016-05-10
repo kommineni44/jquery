@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html ng-app="app8" ng-cloak> 
+  <head>
+  <style >
+  .ng-cloak,[ng-cloak],[ng\:cloak]{
+  display:none;
+  }
+  
+  input.ng-dirty.ng-invalid{
+   border.color:red;
+  
+  }
+  
+  .thick{
+  font-weight: bold;
+  }
+  
+  </style>
+  
+  
+  </head>
+   <body>
+   
+      <div  ng-controller="serviceControl">
+        <input type="text"  ng-model="userName"  />
+        
+        <button ng-click="greetUser(userName)">Hello</button>
+      
+      <br/><br/>
+      
+   <!--    URL:{{currentURL}}
+      prototocol :{{theProtocol}}
+      Host:{{currHost}}
+      Port:{{currPort}}
+      Path:{{currPath}}
+      search:{{currSearch}}
+   -->
+   
+   
+     Current Time: {{time}} 
+     
+     
+     <label>Message: 
+     
+     <input type="text" ng-model="message" /> </label>  
+     
+     <button  ng-click="$log.log(message)"> log</button>
+     <button  ng-click="$log.warn(message)"> warn</button>
+     
+      <button ng-click="throwException()">exception</button>
+      <br/><br/>
+      
+      
+      <input type="text" ng-model="badStuff" />
+      <br/>
+      <span>{{badStuff}}</span>
+      <span  ng-bind-html="badStuff"></span>
+      
+      <span ng-bind="badStuff"></span>
+      </div>
+      
+     
+   
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-sanitize.js"></script>
+    <script src="js/app8.js"></script>
+   </body>
+
+
+
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html ng-app="app6" ng-cloak> 
+  <head>
+  <style >
+  .ng-cloak,[ng-cloak],[ng\:cloak]{
+  display:none;
+  }
+  
+  input.ng-dirty.ng-invalid{
+   border.color:red;
+  
+  }
+  
+  </style>
+  
+  
+  </head>
+   <body>
+   
+      <div  ng-controller="mainCtrl">
+      
+          <label>make upper case;</label>
+          <input type="text"  ng-model="name"  />
+          
+          <p> uppercase :{{  name| uppercase }} </p>
+          <p> lowercase :{{  name| lowercase }} </p>
+          
+      
+          <label>currency filter</label>
+          <input type="text"  ng-model="money"  />
+          
+          <p> money :{{  money| currency }} </p>
+          
+          
+          
+          <ul>
+              <li ng-repeat="student in student.gpas |  filter:name | orderBy :'gpa'">   
+              
+              {{ 'name:' + student.name + 'gpa:'+ student.gpa}}
+           </li>
+          </ul>
+      
+      </div>
+   
+    
+   
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+    <script src="js/app6.js"></script>
+   </body>
+
+
+
+</html>

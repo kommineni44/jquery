@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html ng-app="app11" ng-cloak> 
+  <head>
+  <style >
+  .ng-cloak,[ng-cloak],[ng\:cloak]{
+  display:none;
+  }
+  
+  input.ng-dirty.ng-invalid{
+   border.color:red;
+  
+  }
+  
+  .thick{
+  font-weight: bold;
+  }
+  
+  </style>
+  
+  
+  </head>
+   <body>
+   
+      <div  ng-controller="mainControl">
+      
+         <div bb-player-list="bbPlayers" 
+         array-item="name | uppercase">
+         
+         
+         </div>
+      
+     
+      </div>
+      
+     
+   
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-sanitize.js"></script>
+    <script src="js/app11.js"></script>
+   </body>
+
+
+
+</html>

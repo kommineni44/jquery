@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html ng-app="app3" ng-cloak> 
+  <head>
+  <style >
+  .ng-cloak,[ng-cloak],[ng\:cloak]{
+  display:none;
+  }
+  
+  input.ng-dirty.ng-invalid{
+   border.color:red;
+  
+  }
+  
+  </style>
+  
+  
+  </head>
+   <body>
+   
+  <div ng-controller="srini1" >
+  
+      <table>
+         <thead>
+         <tr>
+            <th> item </th>
+            <th> purchased </th>
+         </tr>
+         </thead>
+         <tr  ng-repeat="grocery in groceries">
+           <td> {{grocery.item}} </td>
+             <td>  <input type="checkbox" ng-model="grocery.purchased"/> </td>
+         </tr>
+      </table>
+        <br/>
+        
+        <label>New Item:</label>
+      
+         <input type="text" ng-model="newItem" />
+         
+         <button ng-click="addItem(newItem)">Add item </button>
+         
+         <h4>{{missingNewItemError}}</h4>
+      
+  
+  
+  
+  
+  </div>
+  
+  <div  ng-controller="userControl">
+  
+    <form name="userForm"  ng-submit="saveUser(userInfo)" >
+    
+	    <label>first name:</label>
+	    <input type="text"  name="fname" ng-model="userInfo.fname"  ng-required="true"  ng-minlength="2"  /> <br/>
+	    
+	    <span  class="error-message" ng-show="userForm.fname.$dirty && userForm.fname.$error.required">
+	        must enter a first name
+	    
+	    </span>
+	    
+	       <span  class="error-message" ng-show="userForm.fname.$dirty && userForm.fname.$error.minlength">
+	        must be at least 2 characters long
+	    
+	    </span>
+	    <br/>
+	    
+	    <label>Last name:</label>
+	    <input type="text"  name="lname" ng-model="userInfo.lname"  ng-required="true"  ng-minlength="2"  /> <br/>
+	    
+	    <span  class="error-message" ng-show="userForm.lname.$dirty && userForm.lname.$error.required">
+	        must enter a first name
+	    
+	    </span>
+	    
+	       <span  class="error-message" ng-show="userForm.lname.$dirty && userForm.lname.$error.minlength">
+	        must be at least 2 characters long
+	    
+	    </span>
+	    <br/>
+	    
+	    <label>Street:</label>
+	    <input type="text"  name="street"  ng-model="userInfo.street"  ng-required="true" ng-minlenght="6" ng-pattern="" />
+	    
+	    <span class="error-message" ng-show="userForm.street.$dirty && userForm.street.$invalid">
+	         Must enter a valid street address
+	    
+	    </span>
+	    
+	           <span  class="error-message" ng-show="userForm.lname.$dirty && userForm.lname.$error.minlength">
+	        must be at least 2 characters long
+	    
+	    </span>
+	    <br/>
+	    
+	    <label>subscription</label>
+	 
+	    <input type="checkbox" name="subscribe"  ng-model="userInfo.subscribe" ng-true-value="'subscribe'" ng-false-value="'don\'t subscribe'" />
+	    <br/>
+	    
+	    <label>Delivery method:</label>
+	    <select   	name="delivery" ng-model="userInfo.delivery"  ng-required="true">
+	    
+	        <option val="email">email</option>
+	         <option val="mail">mail</option>
+	    </select>
+	    
+	
+	  <input type="submit"  value="save" ng-disabled="userform.$invalid"  />
+	  
+	  <br/>
+	  
+	  <ul>
+	    <li ng-repeat="user in users">
+	    
+	        {{ 'User:' + user.fname + " "+ user.lname +" "+ user.street + " "+ user.subscribe + " "+user.delivery }}
+	    
+	    </li>
+	  
+	  </ul>
+	  
+    </form>
+  
+  
+  
+  
+  </div>
+ 
+    
+    
+    
+    
+    
+   
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+    <script src="js/app3.js"></script>
+   </body>
+
+
+
+</html>
